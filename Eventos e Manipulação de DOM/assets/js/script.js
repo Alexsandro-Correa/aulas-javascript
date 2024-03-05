@@ -168,3 +168,72 @@ function clicked() {
 //---------------------------------------------------
 
 // Eventos do teclado
+
+/*
+
+function pressed(){
+  console.log("Apertou");
+}
+
+function hold(){
+
+  console.log("Segurou");
+}
+
+function released(event){
+  // console.log("Soltou");
+  // console.log(event.code); // .code - retorna a tecla clicada de forma mais específica - KeyA
+  // console.log(event.key); // .key - retorna a tecla clicada na forma que foi clicada - a
+  // console.log(event.shiftKey); // shift - passar o valor retorna true ou false, dependendo da verificação
+  // console.log(event.ctrlKey); // - ctrl
+  // console.log(event.altKey); // - alt
+
+  // if(event.key === "a"){
+  //  console.log("a clicado");
+  // }
+
+  // if(event.code === "KeyA"){
+  //  console.log("Teste Funcionando");
+  // }
+}
+
+// keydown - evento que ativa quando clica em alguma tecla
+// keypress - evento que ativa enquanto segura uma tecla
+// keyup - evento que ativa quando solta uma tecla
+
+// document.addEventListener('keyup', released); // - usando apenas document ele engloba a página toda
+
+const input = document.querySelector('input');
+input.addEventListener('keyup', released);
+
+*/
+
+//---------------------------------------------------
+
+// Exercício -Preencher lista ao clicar no enter depois de digitar no input
+
+// Elementos
+const input = document.querySelector("input");
+const list = document.querySelector("ul");
+
+//Funções
+function handleKeyUp(event){
+  if(event.key === "Enter"){
+    // input.value vai pegar o valor do input
+   // list.innerHTML += '<li>' + input.value + '</li>' - Essa não é a melhor forma pois ele 
+   // renderiza tudo denovo após adicionar
+
+   // Adicionar o elemento LI na lista
+   const newLi = document.createElement('li'); // Cria o elemento
+   newLi.innerHTML = input.value; // Pega o valor do input para passar para o newLi
+   list.appendChild(newLi); // Adiciona o newLi a list
+
+   // Limpar o campo de texto
+   input.value = ""
+
+  }
+}
+
+
+// Eventos
+input.addEventListener('keyup', handleKeyUp);
