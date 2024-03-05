@@ -1,2 +1,2 @@
 # aulas-javascript
-Repositória dedicado para estudar javascipt
+Repositório dedicado para estudar javascipt
