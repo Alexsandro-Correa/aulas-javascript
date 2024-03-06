@@ -131,7 +131,7 @@ function clicked() {
 
 // Tipos de Status de um Requisição
 
-// No fetch, para ver o status basta dar um response.status 
+// No fetch, para ver o status basta dar um response.status
 // (response) no caso é o parametro do then, não necessariamente se chama response
 
 /*
@@ -183,3 +183,51 @@ function clicked() {
   document.querySelector("#inserir").addEventListener("click", inserir);
 
   */
+
+//---------------------------------------------------
+
+// Promises com async/await
+
+/*
+
+// await = esperar
+
+// let clicked = async ()=> {}; // Exemplo do uso de async em arrow function
+
+// Uso de async em function padrão
+async function clicked() {
+  let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  let json = await response.json();
+  alert(`Título do primeiro post: ${json[0].title}`);
+
+  alert("Clicou");
+}
+
+async function inserir() {
+  let response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      title: "Titulo de Teste",
+      body: "Corpo de Teste",
+      userId: 2,
+    }),
+  });
+
+  let json = await response.json();
+  console.log(json);
+}
+
+document.querySelector("#post").addEventListener("click", clicked);
+document.querySelector("#inserir").addEventListener("click", inserir);
+
+*/
+
+//---------------------------------------------------
+
+// Projeto : Blog do JSONPlaceholder
+
+//---------------------------------------------------
+
